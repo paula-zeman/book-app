@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Figtree-Regular';
+  src:  local('Figtree'), url('../fonts/Figtree/Figtree-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+  margin: 0px;
+
+}
+
+html {
+  font-family: 'Figtree-Regular', sans-serif;
+}

@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.body-container {
+  display: flex;
+  justify-content: center;
+  margin: 32px;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
