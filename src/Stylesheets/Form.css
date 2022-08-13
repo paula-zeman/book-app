@@ -1,47 +1,30 @@
-.form-micro-container {
-  display: flex;
-}
 
-.new-book-form {
+
+.form-micro {
   display: flex;
   align-items: center;
 }
 
-.form-input-title {
+.form-micro__title {
   border-radius: 8px 0px 0px 8px;
-  border: solid 1px rgba(0, 0, 0, 0.296);
-  padding: 4px;
-  text-align: center;
-  font-family: 'Figtree-Regular', sans-serif;
+
 }
 
 .form-input-genre {
   border-radius: 0px 8px 8px 0px;
+}
+
+.form-micro__title, .form-micro__genre, .form-micro__author, .form-micro__year {
   border: solid 1px rgba(0, 0, 0, 0.296);
   padding: 4px;
   text-align: center;
   font-family: 'Figtree-Regular', sans-serif;
 }
 
-.form-input-author {
-  border: solid 1px rgba(0, 0, 0, 0.296);
-  padding: 4px;
-  text-align: center;
-  font-family: 'Figtree-Regular', sans-serif;
-}
-
-
-.form-button {
+.form-micro__button {
   margin-left: 8px;
   font-family: 'Figtree-Regular', sans-serif;
   border: none;
   font-size: 30px;
   background-color: white;
-}
-
-.form-input-year {
-  border: solid 1px rgba(0, 0, 0, 0.296);
-  padding: 4px;
-  text-align: center;
-  font-family: 'Figtree-Regular', sans-serif;
 }

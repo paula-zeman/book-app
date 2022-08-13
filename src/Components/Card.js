@@ -2,9 +2,9 @@ import '../Stylesheets/Card.css';
 
 function Card() {
   return (
-  <div className="card">
-  Card
-  </div>
+  <main className="card">
+    Card
+  </main>
   );
 }
 

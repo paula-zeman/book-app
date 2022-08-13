@@ -19,7 +19,7 @@ function App() {
         <Genre />
         <Filter />
       </div>
-      <div className='form-container'>
+      <div className='form-macro'>
         <Form />
       </div>
       <div className="body-container">
