@@ -8,10 +8,10 @@ import Form from './Components/Form';
 function App() {
   return (
     <div className="App">
-      <div className='header-container'>
+      <div className='header-macro'>
       <Header></Header>
       </div>
-      <div className='sub-header'>
+      <div className='sub-header-macro'>
         <Genre />
         <Genre />
         <Genre />
@@ -22,8 +22,8 @@ function App() {
       <div className='form-macro'>
         <Form />
       </div>
-      <div className="body-container">
-        <div className="card-container">
+      <div className="main-macro">
+        <div className="card-macro">
         <Card></Card>
         <Card></Card>
         <Card></Card>

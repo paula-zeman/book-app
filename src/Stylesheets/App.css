@@ -1,10 +1,10 @@
 
-.header-container {
+.header-macro {
   border-bottom: 1px solid rgba(0, 0, 0, 0.11);
   /* background-color: rgba(104, 98, 98, 0.151); */
 }
 
-.sub-header {
+.sub-header-macro {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -12,21 +12,19 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.11);
 }
 
-
 .form-macro {
   margin-top: 32px;
   display: flex;
   justify-content: center;
 }
 
-
-.body-container {
+.main-macro {
   display: flex;
   justify-content: center;
   margin: 32px;
 }
 
-.card-container {
+.card-macro {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
