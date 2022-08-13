@@ -2,7 +2,7 @@
 
 function Genre() {
   return (
-  <div className="genre">
+  <div className="genre-micro">
     Genre
   </div>
   );
