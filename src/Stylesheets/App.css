@@ -23,9 +23,3 @@
   justify-content: center;
   margin: 32px;
 }
-
-.card-macro {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}

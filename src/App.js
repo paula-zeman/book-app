@@ -1,9 +1,8 @@
 import './Stylesheets/App.css';
 import Header from './Components/Header';
-import Card from './Components/Card';
 import Filter from './Components/Filter';
 import Genre from './Components/Genre';
-import Form from './Components/Form';
+import MidPart from './Components/MidPart';
 
 function App() {
   return (
@@ -20,12 +19,7 @@ function App() {
         <Filter />
       </div>
       <div className='form-macro'>
-        <Form />
-      </div>
-      <div className="main-macro">
-        <div className="card-macro">
-        <Card></Card>
-        </div>
+       <MidPart></MidPart>
       </div>
     </div>
   );
