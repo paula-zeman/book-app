@@ -25,14 +25,6 @@ function App() {
       <div className="main-macro">
         <div className="card-macro">
         <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
         </div>
       </div>
     </div>
