@@ -1,17 +1,16 @@
 import './Stylesheets/App.css';
 import Header from './Components/Header';
-import Card from './Components/Card';
 import Filter from './Components/Filter';
 import Genre from './Components/Genre';
-import Form from './Components/Form';
+import MidPart from './Components/MidPart';
 
 function App() {
   return (
     <div className="App">
-      <div className='header-container'>
+      <div className='header-macro'>
       <Header></Header>
       </div>
-      <div className='sub-header'>
+      <div className='sub-header-macro'>
         <Genre />
         <Genre />
         <Genre />
@@ -20,20 +19,7 @@ function App() {
         <Filter />
       </div>
       <div className='form-macro'>
-        <Form />
-      </div>
-      <div className="body-container">
-        <div className="card-container">
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        </div>
+       <MidPart></MidPart>
       </div>
     </div>
   );
