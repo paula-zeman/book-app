@@ -27,12 +27,23 @@ function MidPart () {
         genre: newGenre
       }, ...prevBookList]
     });
+    setNewTitle('');
+    setNewAuthor('');
+    setNewYear('');
+    setNewGenre('');
+  }
+
+  const newValue = {
+    title: newTitle,
+    author: newAuthor,
+    year: newYear,
+    genre: newGenre
   }
 
   return (
     <main className="card-micro">
       <Form handleFormSubmit={updateCards} handleTitle={updateTitle} handleAuthor={updateAuthor}
-        handleYear={updateYear} handleGenre={updateGenre}>
+        handleYear={updateYear} handleGenre={updateGenre} clearInputValue={newValue}>
       </Form>
       <div className='card-macro'>
       <CardList bookListArray={bookList}></CardList>
