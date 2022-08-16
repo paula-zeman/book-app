@@ -18,6 +18,7 @@ function MidPart () {
 
   const updateCards = (event) => {
     event.preventDefault()
+    if ((newTitle !== '') && (newAuthor !== '')) {
     setBookList(prevBookList => {
       return [{
         key: bookList.length,
@@ -26,7 +27,11 @@ function MidPart () {
         year: newYear,
         genre: newGenre
       }, ...prevBookList]
-    });
+    })
+  } else {
+    alert('Title and author are required!')
+    return false
+  }
     setNewTitle('');
     setNewAuthor('');
     setNewYear('');
