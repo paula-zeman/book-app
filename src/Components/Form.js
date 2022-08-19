@@ -1,4 +1,4 @@
-import '../Stylesheets/Form.css'
+import '../Stylesheets/Form.scss'
 import React, {useState} from 'react'
 
 function Form(props) {

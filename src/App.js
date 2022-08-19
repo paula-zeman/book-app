@@ -1,4 +1,4 @@
-import './Stylesheets/App.css';
+import './Stylesheets/App.scss';
 import Header from './Components/Header';
 import Filter from './Components/Filter';
 import Genre from './Components/Genre';

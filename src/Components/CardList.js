@@ -1,4 +1,4 @@
-import '../Stylesheets/CardList.css';
+import '../Stylesheets/CardList.scss';
 
 function Card(props) {
   return (
