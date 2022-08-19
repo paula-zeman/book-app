@@ -1,4 +1,4 @@
-import '../Stylesheets/Filter.css';
+import '../Stylesheets/Filter.scss';
 
 function Filter() {
   return (

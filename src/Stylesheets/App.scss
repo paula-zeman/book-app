@@ -1,6 +1,7 @@
+$border-thin: 1px solid rgba(0, 0, 0, 0.11);
 
 .header-macro {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  border-bottom: $border-thin;
   /* background-color: rgba(104, 98, 98, 0.151); */
 }
 
@@ -9,7 +10,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 24px 0px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  border-bottom: $border-thin;
 }
 
 .form-macro {
