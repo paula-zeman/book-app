@@ -1,0 +1,19 @@
+.sub-header-macro {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px 0px;
+  margin-bottom: 32px;
+}
+
+.form-macro {
+  margin: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-macro {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}

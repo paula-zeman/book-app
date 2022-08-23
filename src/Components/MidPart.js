@@ -1,6 +1,9 @@
 import Form from './Form';
 import CardList from './CardList';
+import GenreList from './GenreList';
+import Filter from './Filter';
 import React, {useState} from 'react';
+import '../Stylesheets/MidPart.scss'
 
 function MidPart () {
 
@@ -9,12 +12,12 @@ function MidPart () {
   const [newAuthor, setNewAuthor] = useState('');
   const [newYear, setNewYear] = useState('');
   const [newGenre, setNewGenre] = useState('');
+  const [genreList, setGenreList] = useState([]);
 
-  const updateTitle = (event) => {setNewTitle(event.target.value)};
-  const updateAuthor = (event) => {setNewAuthor(event.target.value)};
-  const updateYear = (event) => {setNewYear(event.target.value)};
-  const updateGenre = (event)=> {setNewGenre(event.target.value)};
-
+  const updateTitle = event => {setNewTitle(event.target.value)};
+  const updateAuthor = event => {setNewAuthor(event.target.value)};
+  const updateYear = event => {setNewYear(event.target.value)};
+  const updateGenre = event => {setNewGenre(event.target.value)};
 
   const updateCards = (event) => {
     event.preventDefault()
@@ -28,14 +31,22 @@ function MidPart () {
         genre: newGenre
       }, ...prevBookList]
     })
-  } else {
-    alert('Title and author are required!')
-    return false
-  }
+    } else {
+      alert('Title and author are required!')
+      return false
+    }
+
+    if (!(genreList.includes(newGenre))) {
+    setGenreList(prevGenreList => {
+      return [newGenre, ...prevGenreList]
+    })
+    }
+
     setNewTitle('');
     setNewAuthor('');
     setNewYear('');
     setNewGenre('');
+    // filterGenre(bookList);
   }
 
   const newValue = {
@@ -47,9 +58,15 @@ function MidPart () {
 
   return (
     <main className="card-micro">
+      <div className='sub-header-macro'>
+      <GenreList genreList={genreList}/>
+      <Filter />
+      </div>
+      <div className='form-macro'>
       <Form handleFormSubmit={updateCards} handleTitle={updateTitle} handleAuthor={updateAuthor}
         handleYear={updateYear} handleGenre={updateGenre} clearInputValue={newValue}>
       </Form>
+      </div>
       <div className='card-macro'>
       <CardList bookListArray={bookList}></CardList>
       </div>

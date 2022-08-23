@@ -2,25 +2,9 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.11);
 
 .header-macro {
   border-bottom: $border-thin;
-  /* background-color: rgba(104, 98, 98, 0.151); */
-}
-
-.sub-header-macro {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 24px 0px;
-  border-bottom: $border-thin;
-}
-
-.form-macro {
-  margin-top: 32px;
-  display: flex;
-  justify-content: center;
 }
 
 .main-macro {
   display: flex;
   justify-content: center;
-  margin: 32px;
 }
