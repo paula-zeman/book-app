@@ -6,7 +6,7 @@ function Form(props) {
   const [formVisibility, setFormVisibility] = useState(false);
 
   return (
-      <div class="form-with-button">
+      <div className="form-with-button">
       <button onClick={() => setFormVisibility(!formVisibility)}>Add a new Book?</button>
       {formVisibility &&
         <form action="" className="form-micro">
