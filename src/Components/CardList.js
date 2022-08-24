@@ -6,20 +6,10 @@ function Card(props) {
       {props.bookListArray.map(book => {
         return (
           <div className="single-card">
-            <div className="left-column">
-              <p>Entry Nr. </p>
-              <p>Title </p>
-              <p>Author </p>
-              <p>Year </p>
-              <p>Genre </p>
-            </div>
-            <div className="right-column">
-              <p>{book.key}</p>
-              <p>{book.title}</p>
-              <p>{book.author}</p>
-              <p>{book.year}</p>
-              <p>{book.genre}</p>
-            </div>
+              <p><b>{book.key}</b></p>
+              <p className='title'>{book.title}</p>
+              <p className='author'>{book.author}</p>
+              <p>{book.year}, {book.genre}</p>
           </div>
         )}
       )}

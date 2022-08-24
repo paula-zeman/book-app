@@ -7,7 +7,7 @@ function Form(props) {
 
   return (
       <div className="form-with-button">
-      <button onClick={() => setFormVisibility(!formVisibility)}>Add a new Book?</button>
+      <button onClick={() => setFormVisibility(!formVisibility)}>Add Book?</button>
       {formVisibility &&
         <form action="" className="form-micro">
             <input onChange={props.handleTitle} className="form-micro__title" type="text" name="title" id="title" placeholder="Title" value={props.clearInputValue.title} required/>

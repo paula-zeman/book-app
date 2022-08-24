@@ -24,7 +24,7 @@ function MidPart () {
     if ((newTitle !== '') && (newAuthor !== '')) {
     setBookList(prevBookList => {
       return [{
-        key: bookList.length,
+        key: bookList.length + 1,
         title: newTitle,
         author: newAuthor,
         year: newYear,
@@ -57,7 +57,7 @@ function MidPart () {
   }
 
   return (
-    <main className="card-micro">
+    <main className="main-micro">
       <div className='sub-header-macro'>
       <GenreList genreList={genreList}/>
       <Filter />

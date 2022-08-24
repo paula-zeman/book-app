@@ -1,18 +1,24 @@
+$border-thin: solid 1px rgba(0, 0, 0, 0.296);
+$figtree: 'Figtree-Regular', sans-serif;
+
 .form-with-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  justify-content: start;
+  margin-left: 300px;
+
+
+  button {
+    font-family: $figtree;
+    padding: 4px;
+    border: $border-thin;
+    border-radius: 8px;
+    background-color: white;
+    width: 164px;
+  }
 }
 
-button {
-  font-family: 'Figtree-Regular', sans-serif;
-  padding: 8px;
-  border: solid 1px rgba(0, 0, 0, 0.193);
-  border-radius: 8px;
-  background-color: white;
-  font-size: medium;
-  width: 200px;
-}
+
 
 .form-micro {
   display: flex;
@@ -30,16 +36,16 @@ button {
 }
 
 .form-micro__title, .form-micro__genre, .form-micro__author, .form-micro__year {
-  border: solid 1px rgba(0, 0, 0, 0.296);
+  border: $border-thin;
   padding: 4px;
   text-align: center;
-  font-family: 'Figtree-Regular', sans-serif;
+  font-family: $figtree;
 }
 
 .form-micro__button {
   margin-left: 8px;
   padding: 0px 0px 3px 1px;
-  font-family: 'Figtree-Regular', sans-serif;
+  font-family: $figtree;
   border: none;
   font-size: 30px;
   background-color: rgba(104, 101, 101, 0.124);
