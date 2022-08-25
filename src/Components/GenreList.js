@@ -1,4 +1,4 @@
-// import '../Stylesheets/Genres.css';
+import '../Stylesheets/GenreList.scss';
 
 function GenreList(props) {
 

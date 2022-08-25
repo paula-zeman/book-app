@@ -1,21 +1,17 @@
 .single-card {
-  height: 300px;
-  width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
   border-radius: 8px;
-  margin: 16px;
-  padding: 0;
-  background-color: powderblue;
+  padding: 12px 24px;
+  background-color: rgba(14, 112, 131, 0.541);
 }
+
 
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.right-column {
-  font-weight: bold;
-  font-size: larger;
+  margin: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-auto-flow: row;
+  grid-template-rows: auto;
+  gap: 12px;
 }

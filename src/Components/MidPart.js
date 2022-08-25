@@ -24,7 +24,7 @@ function MidPart () {
     if ((newTitle !== '') && (newAuthor !== '')) {
     setBookList(prevBookList => {
       return [{
-        key: bookList.length,
+        key: bookList.length + 1,
         title: newTitle,
         author: newAuthor,
         year: newYear,
@@ -57,18 +57,18 @@ function MidPart () {
   }
 
   return (
-    <main className="card-micro">
+    <main className="main-micro">
       <div className='sub-header-macro'>
-      <GenreList genreList={genreList}/>
-      <Filter />
+        <GenreList genreList={genreList}/>
+        <Filter />
       </div>
       <div className='form-macro'>
-      <Form handleFormSubmit={updateCards} handleTitle={updateTitle} handleAuthor={updateAuthor}
-        handleYear={updateYear} handleGenre={updateGenre} clearInputValue={newValue}>
-      </Form>
+        <Form handleFormSubmit={updateCards} handleTitle={updateTitle} handleAuthor={updateAuthor}
+          handleYear={updateYear} handleGenre={updateGenre} clearInputValue={newValue}>
+        </Form>
       </div>
       <div className='card-macro'>
-      <CardList bookListArray={bookList}></CardList>
+        <CardList bookListArray={bookList}></CardList>
       </div>
     </main>
   )
