@@ -10,7 +10,8 @@
 .card-list {
   margin: 24px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 300px);
+  grid-auto-flow: row;
   grid-template-rows: auto;
   gap: 12px;
 }
