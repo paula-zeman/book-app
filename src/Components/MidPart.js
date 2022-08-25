@@ -2,73 +2,82 @@ import Form from './Form';
 import CardList from './CardList';
 import GenreList from './GenreList';
 import Filter from './Filter';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../Stylesheets/MidPart.scss'
 
-function MidPart () {
+function MidPart() {
 
   const [bookList, setBookList] = useState([]);
-  const [newTitle, setNewTitle] = useState('');
-  const [newAuthor, setNewAuthor] = useState('');
-  const [newYear, setNewYear] = useState('');
-  const [newGenre, setNewGenre] = useState('');
+
   const [genreList, setGenreList] = useState([]);
+  const [formVisibility, setFormVisibility] = useState(false);
+  // const updateTitle = event => {setNewTitle(event.target.value)};
+  // const updateAuthor = event => {setNewAuthor(event.target.value)};
+  // const updateYear = event => {setNewYear(event.target.value)};
+  // const updateGenre = event => {setNewGenre(event.target.value)};
 
-  const updateTitle = event => {setNewTitle(event.target.value)};
-  const updateAuthor = event => {setNewAuthor(event.target.value)};
-  const updateYear = event => {setNewYear(event.target.value)};
-  const updateGenre = event => {setNewGenre(event.target.value)};
-
-  const updateCards = (event) => {
+  const updateCards = (event, newBook) => {
     event.preventDefault()
-    if ((newTitle !== '') && (newAuthor !== '')) {
+    console.log(newBook)
     setBookList(prevBookList => {
       return [{
+        ...newBook,
         key: bookList.length + 1,
-        title: newTitle,
-        author: newAuthor,
-        year: newYear,
-        genre: newGenre
       }, ...prevBookList]
     })
-    } else {
-      alert('Title and author are required!')
-      return false
-    }
 
-    if (!(genreList.includes(newGenre))) {
-    setGenreList(prevGenreList => {
-      return [newGenre, ...prevGenreList]
-    })
+    if (!(genreList.includes(newBook.genre))) {
+      setGenreList(prevGenreList => {
+        return [newBook.genre, ...prevGenreList]
+      })
     }
-
-    setNewTitle('');
-    setNewAuthor('');
-    setNewYear('');
-    setNewGenre('');
-    // filterGenre(bookList);
   }
 
-  const newValue = {
-    title: newTitle,
-    author: newAuthor,
-    year: newYear,
-    genre: newGenre
+  const defaultValues = {
+    title: 'Titeltest',
+    author: 'TestAutor',
+    year: 'Testjahr',
+    genre: 'Testgenre'
+  }
+
+  const updateBook = (updatedBook) => {
+    bookList.find((book) => {
+      if (book.key === updatedBook.key) {
+        book.title = updatedBook.title
+        book.author = updatedBook.author
+        book.year = updatedBook.year
+        book.genre = updatedBook.genre
+        return (
+          book
+        )
+      } else {
+        return null
+      }
+    })
+  }
+
+  const deleteBook = (clickedBook) => {
+    // setBookList((prevBookList => {
+    //   const newBookList = prevBookList.filter(book => {
+    //     return book.key !== clickedBook
+    //   }
+    //   )
+    //   return newBookList
+    // }))
   }
 
   return (
     <main className="main-micro">
       <div className='sub-header-macro'>
-        <GenreList genreList={genreList}/>
+        <GenreList genreList={genreList} />
         <Filter />
       </div>
       <div className='form-macro'>
-        <Form handleFormSubmit={updateCards} handleTitle={updateTitle} handleAuthor={updateAuthor}
-          handleYear={updateYear} handleGenre={updateGenre} clearInputValue={newValue}>
-        </Form>
+        <button onClick={() => setFormVisibility(!formVisibility)}>Add Book?</button>
+        {formVisibility && <Form handleFormSubmit={updateCards} defaultValues={defaultValues} />}
       </div>
       <div className='card-macro'>
-        <CardList bookListArray={bookList}></CardList>
+        <CardList bookListArray={bookList} onUpdateBook={updateBook} onDeleteBook={deleteBook}></CardList>
       </div>
     </main>
   )
