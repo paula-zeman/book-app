@@ -1,42 +1,41 @@
 import '../Stylesheets/CardList.scss';
-import React, {useState} from 'react';
-import Form from './Form';
+// import React, {useState} from 'react';
+import Card from './Card';
 
 function CardList(props) {
-  const [showEdit, setShowEdit] = useState(false);
-  const updateBook = (event, newBook) => {
-    event.preventDefault();
-    props.onUpdateBook(newBook)
-    setShowEdit(false)
-    // update the bookList with new info
-    // close edit window
-  };
 
-
-  const deleteBook = (book) => {
-    props.onDeleteBook(book)
+  const updateBook = (updatedBook) => {
+    props.bookListArray.find((book) => {
+      if (book.key === updatedBook.key) {
+        book.title = updatedBook.title
+        book.author = updatedBook.author
+        book.year = updatedBook.year
+        book.genre = updatedBook.genre
+        return (
+          book
+        )
+      } else {
+        return null
+      }
+    })
   }
 
-  const showEditWindowForBook = () => {
-    setShowEdit(true);
-    };
+  const deleteBook = (clickedBook) => {
+      const newBookList = props.bookListArray.filter(book => {
+        return book.key !== clickedBook
+      }
+      )
+      return newBookList
+  }
 
   return (
     <div className="card-list">
       {props.bookListArray.map(book => {
         return (
-          <div className="single-card" key={book.key}>
-              <p><b>{book.key}</b></p>
-              <p className='title'>{book.title}</p>
-              <p className='author'>{book.author}</p>
-            <p>{book.year}, {book.genre}</p>
-            <button onClick={showEditWindowForBook}>Editieren</button>
-            {showEdit && <Form handleFormSubmit={updateBook} defaultValues={book} /> }
-            <button onClick={deleteBook(book)}>Löschen</button>
-          </div>
+          <Card singleBook={book} onUpdate={updateBook} onDelete={deleteBook}/>
         )}
       )}
-        </div>
+    </div>
   );
 }
 

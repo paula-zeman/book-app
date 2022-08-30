@@ -33,38 +33,14 @@ function MidPart() {
     }
   }
 
-  const defaultValues = {
-    title: 'Titeltest',
-    author: 'TestAutor',
-    year: 'Testjahr',
-    genre: 'Testgenre'
-  }
+  // const defaultValues = {
+  //   title: 'Titeltest',
+  //   author: 'TestAutor',
+  //   year: 'Testjahr',
+  //   genre: 'Testgenre'
+  // }
 
-  const updateBook = (updatedBook) => {
-    bookList.find((book) => {
-      if (book.key === updatedBook.key) {
-        book.title = updatedBook.title
-        book.author = updatedBook.author
-        book.year = updatedBook.year
-        book.genre = updatedBook.genre
-        return (
-          book
-        )
-      } else {
-        return null
-      }
-    })
-  }
 
-  const deleteBook = (clickedBook) => {
-    // setBookList((prevBookList => {
-    //   const newBookList = prevBookList.filter(book => {
-    //     return book.key !== clickedBook
-    //   }
-    //   )
-    //   return newBookList
-    // }))
-  }
 
   return (
     <main className="main-micro">
@@ -74,10 +50,10 @@ function MidPart() {
       </div>
       <div className='form-macro'>
         <button onClick={() => setFormVisibility(!formVisibility)}>Add Book?</button>
-        {formVisibility && <Form handleFormSubmit={updateCards} defaultValues={defaultValues} />}
+        {formVisibility && <Form handleFormSubmit={updateCards} />}
       </div>
       <div className='card-macro'>
-        <CardList bookListArray={bookList} onUpdateBook={updateBook} onDeleteBook={deleteBook}></CardList>
+        <CardList bookListArray={bookList}></CardList>
       </div>
     </main>
   )
