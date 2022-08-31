@@ -11,14 +11,9 @@ function MidPart() {
 
   const [genreList, setGenreList] = useState([]);
   const [formVisibility, setFormVisibility] = useState(false);
-  // const updateTitle = event => {setNewTitle(event.target.value)};
-  // const updateAuthor = event => {setNewAuthor(event.target.value)};
-  // const updateYear = event => {setNewYear(event.target.value)};
-  // const updateGenre = event => {setNewGenre(event.target.value)};
 
   const updateCards = (event, newBook) => {
     event.preventDefault()
-    console.log(newBook)
     setBookList(prevBookList => {
       return [{
         ...newBook,
@@ -33,14 +28,12 @@ function MidPart() {
     }
   }
 
-  // const defaultValues = {
-  //   title: 'Titeltest',
-  //   author: 'TestAutor',
-  //   year: 'Testjahr',
-  //   genre: 'Testgenre'
-  // }
-
-
+  const deleteBookMethod = (key) => {
+    console.log(key)
+      const newList = bookList.filter((book) => book.key !== key);
+      setBookList(newList);
+      setGenreList()
+  }
 
   return (
     <main className="main-micro">
@@ -53,7 +46,7 @@ function MidPart() {
         {formVisibility && <Form handleFormSubmit={updateCards} />}
       </div>
       <div className='card-macro'>
-        <CardList bookListArray={bookList}></CardList>
+        <CardList bookListArray={bookList} onDeleteBook={deleteBookMethod}></CardList>
       </div>
     </main>
   )

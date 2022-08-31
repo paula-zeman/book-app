@@ -1,12 +1,12 @@
 import '../Stylesheets/Form.scss'
 import React, {useState} from 'react'
 
-function Form({ defaultValues = {key: 1, title: '', author: '', year: '', genre:''}, handleFormSubmit }) {
+function Form({ handleFormSubmit }) {
 
-  const [newTitle, setNewTitle] = useState(defaultValues.title);
-  const [newAuthor, setNewAuthor] = useState(defaultValues.author);
-  const [newYear, setNewYear] = useState(defaultValues.year);
-  const [newGenre, setNewGenre] = useState(defaultValues.genre);
+  const [newTitle, setNewTitle] = useState('');
+  const [newAuthor, setNewAuthor] = useState('');
+  const [newYear, setNewYear] = useState('');
+  const [newGenre, setNewGenre] = useState('');
 
   const updateTitle = event => {setNewTitle(event.target.value)};
   const updateAuthor = event => {setNewAuthor(event.target.value)};
@@ -17,7 +17,7 @@ function Form({ defaultValues = {key: 1, title: '', author: '', year: '', genre:
 
   const handleInternalSubmit = (event) => {
     const newBook = {
-      key: defaultValues.key || '',
+      key: '',
       title: newTitle,
       author: newAuthor,
       year: newYear,

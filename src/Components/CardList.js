@@ -20,19 +20,15 @@ function CardList(props) {
     })
   }
 
-  const deleteBook = (clickedBook) => {
-      const newBookList = props.bookListArray.filter(book => {
-        return book.key !== clickedBook
-      }
-      )
-      return newBookList
+  const deleteBook = (clickedBookKey) => {
+    props.onDeleteBook(clickedBookKey)
   }
 
   return (
     <div className="card-list">
       {props.bookListArray.map(book => {
         return (
-          <Card singleBook={book} onUpdate={updateBook} onDelete={deleteBook}/>
+          <Card key={book.key} singleBook={book} onUpdate={updateBook} onDelete={deleteBook}/>
         )}
       )}
     </div>
