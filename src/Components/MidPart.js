@@ -25,14 +25,18 @@ function MidPart() {
       setGenreList(prevGenreList => {
         return [newBook.genre, ...prevGenreList]
       })
+    } else {
+      return null
     }
   }
 
   const deleteBookMethod = (key) => {
     console.log(key)
-      const newList = bookList.filter((book) => book.key !== key);
-      setBookList(newList);
-      setGenreList()
+      const newList = bookList.filter((book) => book.key !== key)
+      setBookList(newList)
+      const newGenreList = newList.map((book) => book.genre)
+      console.log(newGenreList)
+      setGenreList(newGenreList)
   }
 
   return (
