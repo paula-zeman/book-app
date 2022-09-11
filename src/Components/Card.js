@@ -14,8 +14,6 @@ function Card({singleBook, onUpdate, onDelete}) {
     event.preventDefault();
     onUpdate(newBook)
     setShowEdit(false)
-    // update the bookList with new info
-    // close edit window
   };
 
 
