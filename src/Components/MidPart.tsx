@@ -1,18 +1,19 @@
-import Form from './Form';
-import CardList from './CardList';
-import GenreList from './GenreList';
-import Filter from './Filter';
-import React, { useState } from 'react';
+import { Form } from './Form';
+import { CardList } from './CardList';
+import { GenreList } from './GenreList';
+import { Filter } from './Filter';
+import { useState } from 'react';
 import '../Stylesheets/MidPart.scss'
+import { Book } from './Types'
 
-function MidPart() {
+export const MidPart = () => {
 
-  const [bookList, setBookList] = useState([]);
+  const [bookList, setBookList] = useState<Book[]>([]);
 
-  const [genreList, setGenreList] = useState([]);
+  const [genreList, setGenreList] = useState<string[]>([]);
   const [formVisibility, setFormVisibility] = useState(false);
 
-  const updateCards = (event, newBook) => {
+  const updateCards = (event, newBook: Book) => {
     event.preventDefault()
     setBookList(prevBookList => {
       return [{
@@ -30,7 +31,7 @@ function MidPart() {
     }
   }
 
-  const deleteBookMethod = (key) => {
+  const deleteBookMethod = (key: number) => {
     console.log(key)
       const newList = bookList.filter((book) => book.key !== key)
       setBookList(newList)
@@ -50,10 +51,8 @@ function MidPart() {
         {formVisibility && <Form handleFormSubmit={updateCards} />}
       </div>
       <div className='card-macro'>
-        <CardList bookListArray={bookList} onDeleteBook={deleteBookMethod}></CardList>
+        <CardList bookList={bookList} onDeleteBook={deleteBookMethod}></CardList>
       </div>
     </main>
   )
 }
-
-export default MidPart;

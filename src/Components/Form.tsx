@@ -1,7 +1,8 @@
 import '../Stylesheets/Form.scss'
-import React, {useState} from 'react'
+import {useState} from 'react'
 
-function Form({ handleFormSubmit }) {
+
+export const Form = ({ handleFormSubmit }) => {
 
   const [newTitle, setNewTitle] = useState('');
   const [newAuthor, setNewAuthor] = useState('');
@@ -43,5 +44,3 @@ function Form({ handleFormSubmit }) {
       </div>
   );
 }
-
-export default Form;

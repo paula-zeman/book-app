@@ -1,7 +1,7 @@
 import '../Stylesheets/Header.scss';
 
 
-function Header() {
+export const Header = () => {
   return (
   <nav className="header-micro">
     <div>logo</div>
@@ -10,5 +10,3 @@ function Header() {
   </nav>
   );
 }
-
-export default Header;
