@@ -1,11 +1,9 @@
 import '../Stylesheets/Filter.scss';
 
-function Filter() {
+export const Filter = () => {
   return (
   <div className="filter-micro">
     Filter
   </div>
   );
 }
-
-export default Filter;

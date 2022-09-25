@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import Form from './Form';
+import { useState } from 'react';
+import { Form } from './Form';
 
-function Card({singleBook, onUpdate, onDelete}) {
+export const Card = ({singleBook, onUpdate, onDelete}) => {
 
   const [showEdit, setShowEdit] = useState(false);
 
@@ -30,5 +30,3 @@ function Card({singleBook, onUpdate, onDelete}) {
     </div>
   )
 }
-
-export default Card;

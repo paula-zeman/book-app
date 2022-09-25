@@ -1,9 +1,8 @@
 import './Stylesheets/App.scss';
-import Header from './Components/Header';
-import MidPart from './Components/MidPart';
-// import React, {useState} from 'react';
+import {Header} from './Components/Header';
+import {MidPart} from './Components/MidPart';
 
-function App() {
+export const App = () => {
 
   return (
     <div className="App">
@@ -16,5 +15,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -1,11 +1,16 @@
 import '../Stylesheets/CardList.scss';
-// import React, {useState} from 'react';
-import Card from './Card';
+import { Card } from './Card';
+import { Book } from './Types'
 
-function CardList(props) {
+export type CardListProps = {
+  bookList: Book[]
+  onDeleteBook: (key: number) => void
+}
+
+export const CardList = (props: CardListProps) => {
 
   const updateBook = (updatedBook) => {
-    props.bookListArray.find((book) => {
+    props.bookList.find((book: Book) => {
       if (book.key === updatedBook.key) {
         book.title = updatedBook.title
         book.author = updatedBook.author
@@ -26,7 +31,7 @@ function CardList(props) {
 
   return (
     <div className="card-list">
-      {props.bookListArray.map(book => {
+      {props.bookList.map(book => {
         return (
           <Card key={book.key} singleBook={book} onUpdate={updateBook} onDelete={deleteBook}/>
         )}
@@ -34,5 +39,3 @@ function CardList(props) {
     </div>
   );
 }
-
-export default CardList;
