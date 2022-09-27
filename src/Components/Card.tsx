@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import { Form } from './Form';
+import { Book } from './Types'
 
-export const Card = ({singleBook, onUpdate, onDelete}) => {
+export type CardProps = {
+  singleBook: Book
+  onUpdate: (newBook: Book) => void
+  onDelete: (key: number) => void
+}
+
+export const Card = (props: CardProps) => {
 
   const [showEdit, setShowEdit] = useState(false);
 
@@ -9,24 +16,21 @@ export const Card = ({singleBook, onUpdate, onDelete}) => {
     setShowEdit(true);
   }
 
-
   const updateBook = (event, newBook) => {
     event.preventDefault();
-    onUpdate(newBook)
+    props.onUpdate(newBook)
     setShowEdit(false)
   };
 
-
   return(
-
-    <div className="single-card" key={singleBook.key}>
-      <p><b>{singleBook.key}</b></p>
-      <p className='title'>{singleBook.title}</p>
-      <p className='author'>{singleBook.author}</p>
-      <p>{singleBook.year}, {singleBook.genre}</p>
+    <div className="single-card" key={props.singleBook.key}>
+      <p><b>{props.singleBook.key}</b></p>
+      <p className='title'>{props.singleBook.title}</p>
+      <p className='author'>{props.singleBook.author}</p>
+      <p>{props.singleBook.year}, {props.singleBook.genre}</p>
       <button onClick={showEditWindowForBook}>Editieren</button>
       {showEdit && <Form handleFormSubmit={updateBook}/> }
-      <button onClick={()=> onDelete(singleBook.key)}>Löschen</button>
+      <button onClick={()=> props.onDelete(props.singleBook.key)}>Löschen</button>
     </div>
   )
 }
