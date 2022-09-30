@@ -3,9 +3,11 @@ import {useState} from 'react'
 import { Book } from './Types'
 import React from 'react'
 
+export type FormProps = {
+  handleFormSubmit: (event: React.FormEvent<HTMLFormElement>, newBook: Book) => void
+}
 
-
-export const Form = ({ handleFormSubmit} ) => {
+export const Form = (props: FormProps) => {
 
   const [newTitle, setNewTitle] = useState('')
   const [newAuthor, setNewAuthor] = useState('')
@@ -21,13 +23,13 @@ export const Form = ({ handleFormSubmit} ) => {
 
   const handleInternalSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const newBook = {
-      key: '',
+      key: 0,
       title: newTitle,
       author: newAuthor,
       year: newYear,
       genre: newGenre,
     };
-    handleFormSubmit(event, newBook)
+    props.handleFormSubmit(event, newBook)
 
     setNewTitle('')
     setNewAuthor('')

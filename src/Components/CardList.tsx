@@ -9,9 +9,9 @@ export type CardListProps = {
 
 export const CardList = (props: CardListProps) => {
 
-  const updateBook = (updatedBook) => {
+  const updateBook = (updatedBook: Book, bookKey: number) => {
     props.bookList.find((book: Book) => {
-      if (book.key === updatedBook.key) {
+      if (book.key === bookKey) {
         book.title = updatedBook.title
         book.author = updatedBook.author
         book.year = updatedBook.year
@@ -25,7 +25,7 @@ export const CardList = (props: CardListProps) => {
     })
   }
 
-  const deleteBook = (clickedBookKey) => {
+  const deleteBook = (clickedBookKey: number) => {
     props.onDeleteBook(clickedBookKey)
   }
 

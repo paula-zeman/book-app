@@ -8,18 +8,16 @@ import { Book } from './Types'
 import React from 'react'
 
 export const MidPart = () => {
-
   const [bookList, setBookList] = useState<Book[]>([]);
-
   const [genreList, setGenreList] = useState<string[]>([]);
   const [formVisibility, setFormVisibility] = useState(false)
 
-  const updateCards = (event, newBook: Book) => {
+  const updateCards = (event: React.FormEvent<HTMLFormElement>, newBook: Book) => {
     event.preventDefault()
     setBookList(prevBookList => {
       return [{
         ...newBook,
-        key: bookList.length + 1,
+        key: bookList.length + 1
       }, ...prevBookList]
     })
 
@@ -49,7 +47,7 @@ export const MidPart = () => {
       </div>
       <div className='form-macro'>
         <button onClick={() => setFormVisibility(!formVisibility)}>Add Book?</button>
-        {formVisibility && <Form handleFormSubmit={updateCards} />}
+        {formVisibility && <Form handleFormSubmit={updateCards}/>}
       </div>
       <div className='card-macro'>
         <CardList bookList={bookList} onDeleteBook={deleteBookMethod}></CardList>
