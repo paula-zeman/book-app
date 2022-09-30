@@ -1,20 +1,21 @@
 import '../Stylesheets/Form.scss'
 import {useState} from 'react'
 import { Book } from './Types'
+import React from 'react'
 
 
 
 export const Form = ({ handleFormSubmit} ) => {
 
-  const [newTitle, setNewTitle] = useState('');
-  const [newAuthor, setNewAuthor] = useState('');
-  const [newYear, setNewYear] = useState('');
-  const [newGenre, setNewGenre] = useState('');
+  const [newTitle, setNewTitle] = useState('')
+  const [newAuthor, setNewAuthor] = useState('')
+  const [newYear, setNewYear] = useState('')
+  const [newGenre, setNewGenre] = useState('')
 
-  const updateTitle = (event: React.ChangeEvent<HTMLInputElement>) => {setNewTitle(event.target.value)};
-  const updateAuthor = (event: React.ChangeEvent<HTMLInputElement>) => {setNewAuthor(event.target.value)};
-  const updateYear = (event: React.ChangeEvent<HTMLInputElement>) => {setNewYear(event.target.value)};
-  const updateGenre = (event: React.ChangeEvent<HTMLInputElement>) => {setNewGenre(event.target.value)};
+  const updateTitle = (event: React.ChangeEvent<HTMLInputElement>) => {setNewTitle(event.target.value)}
+  const updateAuthor = (event: React.ChangeEvent<HTMLInputElement>) => {setNewAuthor(event.target.value)}
+  const updateYear = (event: React.ChangeEvent<HTMLInputElement>) => {setNewYear(event.target.value)}
+  const updateGenre = (event: React.ChangeEvent<HTMLInputElement>) => {setNewGenre(event.target.value)}
 
 
 
@@ -26,12 +27,12 @@ export const Form = ({ handleFormSubmit} ) => {
       year: newYear,
       genre: newGenre,
     };
-    handleFormSubmit(event, newBook);
+    handleFormSubmit(event, newBook)
 
-    setNewTitle('');
-    setNewAuthor('');
-    setNewYear('');
-    setNewGenre('');
+    setNewTitle('')
+    setNewAuthor('')
+    setNewYear('')
+    setNewGenre('')
   }
   return (
       <div className="form-with-button">

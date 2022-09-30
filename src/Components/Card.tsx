@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { Form } from './Form';
+import { useState } from 'react'
+import { Form } from './Form'
 import { Book } from './Types'
+import React from 'react'
 
 export type CardProps = {
   singleBook: Book
@@ -10,7 +11,7 @@ export type CardProps = {
 
 export const Card = (props: CardProps) => {
 
-  const [showEdit, setShowEdit] = useState(false);
+  const [showEdit, setShowEdit] = useState(false)
 
   const showEditWindowForBook = () => {
     setShowEdit(true);

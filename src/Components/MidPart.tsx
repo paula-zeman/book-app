@@ -1,17 +1,18 @@
-import { Form } from './Form';
-import { CardList } from './CardList';
-import { GenreList } from './GenreList';
-import { Filter } from './Filter';
-import { useState } from 'react';
+import { Form } from './Form'
+import { CardList } from './CardList'
+import { GenreList } from './GenreList'
+import { Filter } from './Filter'
+import { useState } from 'react'
 import '../Stylesheets/MidPart.scss'
 import { Book } from './Types'
+import React from 'react'
 
 export const MidPart = () => {
 
   const [bookList, setBookList] = useState<Book[]>([]);
 
   const [genreList, setGenreList] = useState<string[]>([]);
-  const [formVisibility, setFormVisibility] = useState(false);
+  const [formVisibility, setFormVisibility] = useState(false)
 
   const updateCards = (event, newBook: Book) => {
     event.preventDefault()

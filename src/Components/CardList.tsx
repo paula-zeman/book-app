@@ -1,5 +1,5 @@
-import '../Stylesheets/CardList.scss';
-import { Card } from './Card';
+import '../Stylesheets/CardList.scss'
+import { Card } from './Card'
 import { Book } from './Types'
 
 export type CardListProps = {
