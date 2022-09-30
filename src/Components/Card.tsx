@@ -16,7 +16,7 @@ export const Card = (props: CardProps) => {
     setShowEdit(true);
   }
 
-  const updateBook = (event, newBook) => {
+  const updateBook = (event: React.FormEvent<HTMLFormElement>, newBook: Book) => {
     event.preventDefault();
     props.onUpdate(newBook)
     setShowEdit(false)

@@ -1,22 +1,24 @@
 import '../Stylesheets/Form.scss'
 import {useState} from 'react'
+import { Book } from './Types'
 
 
-export const Form = ({ handleFormSubmit }) => {
+
+export const Form = ({ handleFormSubmit} ) => {
 
   const [newTitle, setNewTitle] = useState('');
   const [newAuthor, setNewAuthor] = useState('');
   const [newYear, setNewYear] = useState('');
   const [newGenre, setNewGenre] = useState('');
 
-  const updateTitle = event => {setNewTitle(event.target.value)};
-  const updateAuthor = event => {setNewAuthor(event.target.value)};
-  const updateYear = event => {setNewYear(event.target.value)};
-  const updateGenre = event => {setNewGenre(event.target.value)};
+  const updateTitle = (event: React.ChangeEvent<HTMLInputElement>) => {setNewTitle(event.target.value)};
+  const updateAuthor = (event: React.ChangeEvent<HTMLInputElement>) => {setNewAuthor(event.target.value)};
+  const updateYear = (event: React.ChangeEvent<HTMLInputElement>) => {setNewYear(event.target.value)};
+  const updateGenre = (event: React.ChangeEvent<HTMLInputElement>) => {setNewGenre(event.target.value)};
 
 
 
-  const handleInternalSubmit = (event) => {
+  const handleInternalSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const newBook = {
       key: '',
       title: newTitle,
