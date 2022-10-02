@@ -4,7 +4,7 @@
   grid-column-end: 6;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 7fr;
+  grid-template-rows: 1fr 1fr 7fr;
   grid-gap: 8px;
 
 
@@ -23,9 +23,9 @@
 
   .card-list-macro {
     grid-row-start: 3;
-    grid-row-end: auto;
+    grid-row-end: 6;
     grid-column-start: 1;
-    grid-column-end: 6;
+    grid-column-end: 7;
   }
 
 
