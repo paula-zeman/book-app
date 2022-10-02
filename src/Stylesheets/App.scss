@@ -1,10 +1,7 @@
 $border-thin: 1px solid rgba(0, 0, 0, 0.11);
 
-.header-macro {
-  border-bottom: $border-thin;
-}
-
-.main-macro {
-  display: flex;
-  justify-content: center;
+.app {
+  display: grid;
+  grid-template-columns: 15px 1fr 1fr 1fr 1fr 15px;
+  grid-template-rows: 60px 7fr;
 }

@@ -1,19 +1,32 @@
 .main-micro {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 6;
   display: grid;
-  grid-template-rows: 150px 130px 5fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 7fr;
+  grid-gap: 8px;
+
+
+  .genre-list-macro {
+    grid-column-start: 2;
+    grid-column-end: 6;
+  }
 
   .form-macro {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
     border: 1px solid rgba(0, 0, 0, 0.11);
     border-radius: 8px;
-    padding-top: 30px;
-    margin-left: 24px;
-    margin-right: 24px;
   }
 
-  .sub-header-macro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .card-list-macro {
+    grid-row-start: 3;
+    grid-row-end: auto;
+    grid-column-start: 1;
+    grid-column-end: 6;
   }
+
 
 }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Form } from './Form'
 import { Book } from './Types'
 import React from 'react'
+import '../Stylesheets/Card.scss'
 
 export type CardProps = {
   singleBook: Book
@@ -26,13 +27,14 @@ export const Card = (props: CardProps) => {
 
   return(
     <div className="single-card" key={props.singleBook.key}>
-      <p><b>{props.singleBook.key}</b></p>
       <p className='title'>{props.singleBook.title}</p>
       <p className='author'>{props.singleBook.author}</p>
-      <p>{props.singleBook.year}, {props.singleBook.genre}</p>
-      <button onClick={showEditWindowForBook}>Editieren</button>
-      {showEdit && <Form handleFormSubmit={updateBook} /> }
-      <button onClick={()=> props.onDelete(props.singleBook.key)}>Löschen</button>
+      <p className='genre-and-year'>{props.singleBook.year}, {props.singleBook.genre}</p>
+      <div className='card-buttons'>
+        <button id="edit" onClick={showEditWindowForBook}>Editieren</button>
+        {showEdit && <Form handleFormSubmit={updateBook} /> }
+        <button id="delete" onClick={()=> props.onDelete(props.singleBook.key)}>Löschen</button>
+      </div>
     </div>
   )
 }
