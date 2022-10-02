@@ -5,13 +5,9 @@ import {MidPart} from './Components/MidPart';
 export const App = () => {
 
   return (
-    <div className="App">
-      <div className='header-macro'>
+    <div className="app">
       <Header></Header>
-      </div>
-      <div className='main-macro'>
        <MidPart></MidPart>
-      </div>
     </div>
   );
 }

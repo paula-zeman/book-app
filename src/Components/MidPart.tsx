@@ -1,7 +1,6 @@
 import { Form } from './Form'
 import { CardList } from './CardList'
 import { GenreList } from './GenreList'
-import { Filter } from './Filter'
 import { useState } from 'react'
 import '../Stylesheets/MidPart.scss'
 import { Book } from './Types'
@@ -41,15 +40,14 @@ export const MidPart = () => {
 
   return (
     <main className="main-micro">
-      <div className='sub-header-macro'>
+      <div className='genre-list-macro'>
         <GenreList genreList={genreList} />
-        <Filter />
       </div>
       <div className='form-macro'>
         <button onClick={() => setFormVisibility(!formVisibility)}>Add Book?</button>
         {formVisibility && <Form handleFormSubmit={updateCards}/>}
       </div>
-      <div className='card-macro'>
+      <div className='card-list-macro'>
         <CardList bookList={bookList} onDeleteBook={deleteBookMethod}></CardList>
       </div>
     </main>
